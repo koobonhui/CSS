@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;  /*(글자에 데코넣기 안하기*/
+}
+
+.menu > h3 {
+	color: blue;
+}
+
+.menu .like {
+	color: green;
+}
+
+.like ~ li {
+	background: yellow;
+}
+
+#korea > li {
+	font-size: 20px;
+}
+
+#korea > li:first-child {   /*자식중에 첫번째*/
+	color: red;
+}
+
+#korea > li:last-child {
+	background: red;
+}
+
+#america > li:nth-child(2) {	/*프로그래밍은 0부터 시작이지만 HTML은 1부터 시작이다*/
+	background: pink;
+}
+
+#america > li:nth-child(2n-1) {
+	color: red;
+}
+
+#china > li:first-of-type {  /*같은 타입 중에 첫번째*/
+	color: purple;
+}
+
+#thai > li:nth-child(2) {    /*li인 두번째 자식은 없음*/
+	background: pink;
+}
+
+#thai > li:nth-of-type(2) {    
+	background: green;
+}
+
+#thai > li:nth-last-child(1) { 	/*뒤에서부터 앞으로 숫자를 카운트*/
+	font-style: italic;
+	font-weight: 900;		
+	/*폰트의 굵기를 설정 100 ~ 900 사용
+	  일반적 굵기는 300, 가는 폰트는 100사용*/    
+}
+
+#thai > li:nth-last-of-type() {    /*뒤에서부터 앞으로 숫자를 카운트*/
+}
+
+h3 {
+	font-family: '궁서','맑은 고딕',serif;   /*제일 앞에 있는 글꼴을 사용하는데
+												앞에 글꼴이 없으면 뒤 글꼴을 찾아서 사용함*/
+}
+
+li {
+	font-family: 'Nanum Pen Script', cursive;
+	
+	/*fonts.google.com에 들어가서 원하는거 링크 걸고 폰트 페밀리로 넣기
+	  @import는 노 권장*/
+	
+}
+</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li class="menu">
+		<h3>한식</h3>
+			<ul id="korea">
+				<li>김치찌개</li>
+				<li>된장찌개</li>
+				<li class="like">비빔밥</li>
+			</ul>
+		</li>
+		<li class="menu">
+		<h3>양식</h3>
+			<ul id="america">
+				<li class="like">파스타</li>
+				<li>피자</li>
+				<li>스테이크</li>
+			</ul>
+		</li>
+		<li class="menu">
+		<h3>중식</h3>
+			<ul id="china">
+				<li>짜장면</li>
+				<li>짬뽕</li>
+				<li class="like">탕수육</li>
+			</ul>
+		</li>
+		<li class="menu">
+		<h3>일식</h3>
+			<ul id="japan">
+				<li>초밥</li>
+				<li class="like">우동</li>
+				<li>돈까스</li>
+			</ul>
+		</li>
+		<li class="menu">
+		<h3>태국식</h3>
+			<ul id="thai">
+				<li class="t">볶음밥</li>
+				<p class="t">커리</p>
+				<li class="t">쌀국수</li>
+				<p class="t">빵</p>
+				<li class="t">반미</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

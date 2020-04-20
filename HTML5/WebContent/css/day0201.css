@@ -1,0 +1,8 @@
+@charset "UTF-8";
+h1 {
+	display: block;   /*길게 잡히는거*/
+	color: blue;       /*글자색*/
+	background: orange; /*배경색*/
+	font-size: 50px;  /*1em = 16px*/
+	text-align: center;
+}

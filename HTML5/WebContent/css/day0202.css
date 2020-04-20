@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*전체선택*/
+* {  
+	margin: 0;    /*외부 여백*/
+	padding: 0;   /*내부 여백*/
+
+	/*0은 단위를 사용안해도 된다*/
+}
+/*태그 전체를 선택*/
+div {
+	background: skyblue;
+}
+/*아이디 선택자 아이디는 #으로 구분
+  아이디는 한개의 태그에만 적용*/
+#box1 {
+	background: orange;
+}
+/* ,를 이용해서 다중 선택 가능*/
+#box2, #box3 {
+	background: yellow;
+}
+
+/*클래스 선택자는 .으로 구분함
+  클래스는 여러 개의 태그에 적용 가능*/
+.boxes {
+	color: red;
+	background: black;
+}
+
+/*선택자의 우선 순위
+  태그 : 1점
+  클래스 : 10점
+  아이디 : 1000점 
+  합산점수가 높은 쪽이 우선
+  같은 점수라면 하단에 기술한 것이 적용*/
+  
+#box1 {
+	background: lightgray;
+}
+
+.bigFont {
+	font-size: 100px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	color: #333;
+}
+
+.nav > ul > li {
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	background: skyblue;
+	overflow: hidden;
+}
+
+.nav > ul > li:hover {
+	background: gray;
+	height: 200px;
+	transition: 0.3s;
+}
+
+.nav > ul > li:hover > h3 > a {
+	color: white;
+}
+
+ul ul > li {
+	background: #9f9;
+}
+
+ul ul > li:hover {
+	background: #7c7;
+}
+
+.nav {
+	width: 800px;
+	margin: 0 auto;
+}
+</style>
+<body>
+<div class="nav">
+	<ul>
+		<li>
+			<h3><a href="#">한식</a></h3>
+			<ul>
+				<li><a href="#">육회</a></li>
+				<li><a href="#">김치</a></li>
+				<li><a href="#">비빔밥</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	<ul>
+		<li>
+			<h3><a href="#">양식</a></h3>
+			<ul>
+				<li><a href="#">스테이크</a></li>
+				<li><a href="#">파스타</a></li>
+				<li><a href="#">피자</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	<ul>
+		<li>
+			<h3><a href="#">일식</a></h3>
+			<ul>
+				<li><a href="#">초밥</a></li>
+				<li><a href="#">돈부리</a></li>
+				<li><a href="#">우동</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

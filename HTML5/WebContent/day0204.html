@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동위선택자</title>
+<style>
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+#parent {
+	width: 600px;
+	height: 500px;
+	background: pink;
+}
+
+#box1 {			/* id = 1000점 */
+	width: 200px;
+	height: 200px;
+	background: red;
+}
+
+#box2 {
+	width: 200px;
+	height: 200px;
+	background: blue;
+}
+/*복합 선택자*/
+#parent #box1 {   /* id + id = 2000점 */
+	background: green;
+}
+/* 공백 : 하위태그 전체를 선택*/
+/*속성 선택자*/
+input[type="text"] {
+	width: 300px;
+	height: 50px;
+}
+
+input[placeholder*="비번"] {
+	background: yellow;
+}
+
+a:link {
+	color: black;	
+}
+
+a:visited { 
+	color: green;
+}
+
+a:hover {    /*마우스 올리면*/
+	background: yellow;
+}
+
+a:active {
+	background: red;
+}
+
+a {
+	font-size: 30px !important;
+}
+
+a {
+	font-size: 5px;
+}
+
+/*동위 선택자 같은 위치의 있는것만*/
+#box1 + div {   /*바로 다음에 나오는 태그일 경우만 선택*/
+
+}
+
+#box1 ~ div {   /*박스1 다음에 나오는 모든 div를 선택*/
+
+}
+</style>
+</head>
+<body>
+<div id="parent">
+	<div id="box1">box1</div>
+	<div id="box2">box2</div>
+</div>
+<div>
+	<form>
+		<input type="text" placeholder="아이디 입력" /><br />
+		<input type="password" placeholder="비번 입력" /><br />
+		<input type="reset" value="초기화" />
+		<button type="submit">로그인</button>	
+	</form>
+</div>
+<div>
+	<p><a href="https://www.naver.com">네이버로 이동</a></p>
+	<p><a href="https://www.nate.com">네이트로 이동</a></p>
+</div>
+</body>
+</html>

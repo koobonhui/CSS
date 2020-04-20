@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스모델</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+div {
+	font-size: 30px;
+	text-align: left;
+	line-height: 200px;
+	width: 200px;		/*컨텐츠의 너비*/
+	height: 200px;		/*컨텐츠의 높이*/
+	background: orange;
+}
+
+#box1 {
+	background: orange;
+	padding: 30px 50px 20px 10px;      /*내부 여백*/
+					   /*padding, margin 1개 값을 입력하면 4개 방위 모두 적용*/
+					   /* 2개 값을 입력하면 첫번째는 위, 아래 두번째는 오, 왼 값이 된다 */
+					   /* 3개 입력하면 첫벗째는 위, 두번째는 오, 왼 세번째는 아래 */
+					   /* 4개 입력하면 상, 우, 하, 좌 순으로 위부터 시계순으로 돌아감 */
+					   /*padding-top: 30px; 상단 내부 여백
+					   	 padding-right: 30px; 우측 내부 여백
+					   	 등등 상하좌우 여백 따로 줄수있음
+					   */
+	border: 20px solid lightskyblue; /* 외곽선 */
+	/* 첫번째 값은 선의 두께
+		두번째는 선의 종류
+		세번째는 선의 색상
+		순서 상관없이 맘대로 해도 됨
+		border-color: red; 선 색상
+		border-width: 1px; 선 두께
+		border-style: solid; 선 종류
+		각각 지정해도 되고 한번에 해도 됨
+		border-top: 1px solid red; 상단 외곽선
+		등등 상하좌우 외곽선 따로 줄수있음
+		border-top-color: blue; 조합도 가능
+		solid : 실선
+		double : 두줄
+		dotted : 점선
+		dashed : 끊어진 실선 
+		groove : 
+		등등 있음
+	*/
+	margin: 50px;
+	box-sizing: border-box;
+}
+
+#box2 {
+	background: pink;
+}
+
+#box3 {
+	display: none;
+}
+</style>
+</head>
+<body>
+<div id="box1">box1</div>
+<div id="box2">box2</div>
+<div id="box3">box3</div>
+</body>
+</html>
