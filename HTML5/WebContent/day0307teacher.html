@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body > div {
+	width: 1600px;
+	margin: 0 auto;
+}
+/*clear fix*/
+body > div::before, body > div::after {
+	display: block;
+	content: "";
+}
+
+body > div::after {
+	clear: both;
+}
+/*clear fix : 클리어 픽스는 float를 사용함으로 인한 부모 태그의 높이가 
+자동으로 설정되지 않고 0으로 표기 되면서 디자인이 표현되지 않는 것을
+방지하여 높이를 지정하는 코드*/
+.head > h1 {
+	font-family: 'Pacifico', cursive;
+	text-align: center;
+}
+
+.nav > ul {
+	text-align: center;
+}
+
+.nav > ul > li {
+	margin: 0 20px;
+	display: inline-block;
+	box-sizing: border-box;
+	padding-bottom: 5px;
+}
+
+.nav > ul > li:hover, .nav > ul > li:first-child {
+	padding-bottom: 3px;
+	border-bottom: 2px solid red;
+}
+
+.nav > ul > li > a > h3 {
+	color: #333;
+}
+
+.section1 > .s1Left > img {
+	width: 1274px;
+	height: 633px;
+}
+
+.section1 > .s1Right {
+	margin-left: 10px;
+	width: 316px;
+	height: 633px;
+}
+
+.section1 > div {
+	float: left;
+}
+
+.section1 > .s1Right > div > img {
+	width: 316px;
+	height: 293px;
+}
+
+.section1 > .s1Right > div:not(:first-child) { /*첫번째꺼 빼고라는 말*/
+	width: 316px;
+	height: 160px;
+	margin-top: 10px;
+	background-image: url("imgs/box_bg.png");
+	border: 3px solid #333;
+	box-sizing: border-box;
+	text-align: center;			/*부모 속성에 정렬 하면 
+								  자식인 h3이런 애들 정렬됨*/		
+}
+
+.section2, .section3, .section4 ,.section5, .section6 {
+	margin-top: 30px;
+}
+
+.section2 > div {
+	float: left;
+}
+
+.s2LeftTop > img {
+	width: 784px;
+	height: 549px;
+}
+
+.section2 > .s2Right {
+	margin-left: 31px;
+}
+
+.s2Right > img {
+	width: 785px;
+	height: 1060px;
+}
+
+.s2LeftBottom {
+	margin-top: 31px;
+}
+
+.section6 > .s6Left > img {
+	width: 785px;
+	height: 725px;
+}
+
+.section6 > div {
+	float: left;
+}
+
+.s6Right {
+	margin-left: 30px;
+	height: 725px;
+	width: 785px;
+}
+
+.s6RightBottom {
+	margin-top: 30px;
+	width: 785px;
+	height: 255px;
+	background: orange;
+}
+</style>
+</head>
+<body>
+
+<div class="head">
+	<h1>alfredo<br>gonzales</h1>
+</div>
+
+<div class="nav">
+	<ul>
+		<li>
+			<a href="#">
+				<img alt="menu01" src="imgs/menu01.png">
+				<h3>Home</h3>
+			</a>			
+		</li>
+		<li>
+			<a href="#">
+			<img alt="menu02" src="imgs/menu02.png">
+			<h3>Shop</h3>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+			<img alt="menu03" src="imgs/menu03.png">
+			<h3>Custombox</h3>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+			<img alt="menu04" src="imgs/menu04.png">
+			<h3>Blog</h3>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+			<img alt="menu05" src="imgs/menu05.png">
+			<h3>Story</h3>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="section1">
+	<div class="s1Left">
+		<img alt="-" src="imgs/header01.jpg">
+	</div>
+	<div class="s1Right">
+		<div>
+			<img alt="-" src="imgs/side01.jpg">
+		</div>
+		<div>
+			<p>DESIGN YOUR OWN SOCK</p>
+			<h3>THE WORKSHOP</h3>
+			<h3>-</h3>
+		</div>
+		<div>
+			<p>SELF SERVICE</p>
+			<h3>ONLINE STORE</h3>
+			<h3>-</h3>
+		</div>
+	</div>
+</div>
+
+<div class="section2">
+	<div class="s2Left">
+		<div class="s2LeftTop">
+			<img alt="-" src="imgs/banner_01.jpg">
+		</div>
+		<div class="s2LeftBottom">
+			 <iframe src="https://player.vimeo.com/video/104136276" width="784" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class="s2Right">
+		<img alt="-" src="imgs/banner_02.jpg">
+	</div>
+</div>
+
+<div class="section3">
+	<img alt="-" src="imgs/banner_03.jpg">
+</div>
+
+<div class="section4">
+	<img alt="-" src="imgs/banner_04.jpg">
+</div>
+
+<div class="section5">
+	<img alt="-" src="imgs/video.jpg">
+</div>
+
+<div class="section6">
+	<div class="s6Left">
+		<img alt="-" src="imgs/banner_05.jpg">
+	</div>
+	<div class="s6Right">
+		<div class="s6RightTop">
+			<iframe src="https://player.vimeo.com/video/58451361" width="785" height="440" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="s6RightBottom">
+			<form>
+				<label>SIGN UP</label>
+				<input type="email" placeholder="YOUR EMAIL ADDRESS">
+				<input type="submit" value="&gt;">
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
