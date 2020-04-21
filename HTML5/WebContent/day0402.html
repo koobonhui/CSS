@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+.container {
+	width: 1000px;
+	height: 800px;
+	background: yellow;
+	position: relative;
+	left: 50px;
+	top: 50px;
+}
+
+.container > .boxes {
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	display: block;
+	position: static;    /*포지션 기본값(static), 
+						   static이 아니면 float 사용 못함
+						   relative, absolute, fixed 있음*/
+						   
+}
+
+#box1 {
+	background: red;
+}
+
+#box2 {
+	background: blue;
+	left: 50px;
+}
+
+#box3 {
+	position: absolute;		/*절대 위치를 사용함 부모의 좌상단이 0, 0임*/
+	background: green;
+	left: 500px;    /*탑 바텀은 둘중 하나만 */
+	top: 400px;	/*레프트 라이트도 둘중 하나만*/
+	margin-left: -100px;
+	margin-top: -100px;
+}
+
+.container > .boxes {
+	position: relative;		/*상대 위치를 사용함*/
+}
+
+.menu {
+	position: fixed;		/*화면에 고정시켜버림*/
+	width: 200px;
+	height: 100%;
+	background: orange;
+	left: 0;
+	top: 0;
+}
+
+body {
+	width: 3000px;
+	height: 3000px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div id="box1" class="boxes">box1</div>
+		<div id="box2" class="boxes">box2</div>
+		<div id="box3" class="boxes">box3</div>
+	</div>
+	
+	<div class="menu"></div>
+</body>
+</html>
