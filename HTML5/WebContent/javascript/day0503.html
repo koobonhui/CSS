@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+* {
+	margin: 0;
+	paddig: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+p {
+	position: relative;
+	left: 50px;
+	top: 50px;
+	background: yellow;
+	color: #333;
+	border: 2px solid blue;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+</style>
+<body>
+<div>
+	<p><span id="xvalue"></span> + <span id="yvalue"></span> = <span id="calc"></span></p>
+</div>
+<script>
+	let x = Number(prompt("x값"));
+	let y = parseInt(prompt("y값"));
+	document.getElementById("xvalue").innerText = "<em>" + x + "</em>";	
+	//innertext 문자열 변경할 때 사용, = 을 사용하면 값이 변경 
+	document.getElementById("yvalue").innerText = y;
+	document.getElementById("calc").innerHTML = "<em>" + (x+y) + "</em>";
+	console.log(document.getElementById("xvalue").innerText);
+	//값을 입력하지 않으면 값이 반환된다.
+</script>
+</body>
+</html>
