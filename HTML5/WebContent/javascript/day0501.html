@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="myForm">
+	<label>필드1</label><input type="text" name="a0"><br />
+	<label>필드2</label><input type="text" name="a1"><br />
+	<label>필드3</label><input type="text" name="a2"><br />
+	<button type="button" onclick="init();">초기화</button>
+</form>
+<script>
+	function init() {	/*펑션은 메소드임*/
+// 		document.myForm.a0.value = 10;
+// 		document.myForm.a1.value = 20;
+// 		document.myForm.a2.value = 30;
+		document.forms[0].elements[0].value = 100;	
+		// form은 forms라는 배열안에 전부 들어있음
+		document.forms[0].elements[1].value = 200;
+		document.forms[0].elements[2].value = 300;
+	}
+</script>
+</body>
+</html>
