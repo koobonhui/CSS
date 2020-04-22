@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	// prompt 사용하면 문자열 입력
+	let x = prompt("x 값", "정수만"); /*입력창 띄워주는 명령어*/
+	let y = prompt("y 값", "실수는 안된다");	/*첫번째 스트링은 위에
+												  두번째 스트링은 안에*/
+// 	let re = x + y;
+// 	console.log(re);  값은 1020으로 나옴
+	
+	x = parseInt(x);	//정수로만 변환
+	y = Number(y);		//텍스트를 숫자로 변환
+	let re = x + y;
+	console.log(re);
+	
+	//confirm()을 사용하면 true, false 값을 리턴함
+	let re2 = confirm("진행할까요?");
+	console.log(re2);
+	//alert(); 이용하면 경고창 출력
+	alert("경고창");
+</script>
+</body>
+</html>
