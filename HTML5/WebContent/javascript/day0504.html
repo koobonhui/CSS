@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>안녕하세요</h3>
+<h3 class="text">안녕하세요</h3>
+<h3 class="text">안녕하세요</h3>
+<script>
+	let tags = document.getElementsByTagName("h3"); 
+	//단일이 아니면 배열로 리턴
+	for(let i = 0; i < tags.length; i++) {
+		tags[i].innerText = "Hello";
+// 		tags[i].style.background = "yellow";
+		tags[i].style.background = "#00" + i * 33 + "00";
+	}
+	
+	let texts = document.getElementsByClassName("text")
+	for(let i = 0; i < texts.length; i++) {
+		texts[i].style.color = "white";
+	}
+	
+	let query = document.querySelector("h3");
+	query.innerText = "안녕";
+	
+	let querys = document.querySelectorAll("h3");
+	for(let i = 0; i < querys.length; i++) {
+		querys[i].innerText = "자바스크립트";
+	}
+	
+	querys = document.querySelectorAll(".text");
+	for(let i = 0; i < querys.length; i++) {
+		querys[i].style.fontSize = "30px";
+	}
+	
+	document.firstChilde.innerText = "가나";
+</script>
+</body>
+</html>
