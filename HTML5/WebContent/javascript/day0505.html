@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>	
+	let arr = [10,20,30,40,50];
+	for(let i = 0; i < arr.length; i++) {
+		document.write(arr[i] + "<br/>");
+	}
+	
+	arr['가'] = "가위";
+	arr['나'] = "나비";
+	
+	for(let index in arr) {
+		document.write("for in : " + index + " : " + arr[index] + "<br/>")
+	}
+	
+	for(let value of arr) {
+		document.write(value + "<br/>");
+	}
+</script>
+</body>
+</html>
