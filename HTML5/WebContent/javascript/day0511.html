@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="pushBtn1()">버튼1</button>
+<button onclick="pushBtn2()">버튼2</button>
+<br/>
+<button onclick="pushBtn3()">버튼3</button>
+<button onclick="pushBtn4()">버튼4</button>
+<button onclick="location.replace('https://www.naver.com')">네이버</button>
+<button onclick="location.href = 'https://www.daum.net' ">다음</button>
+<script>
+	function wConsole() {
+		console.log("출력");
+	}
+	
+	let pb;
+	function pushBtn1() {
+		pb = setTimeout(wConsole, 2000);
+	}
+	
+	function pushBtn2() {
+		clearTimeout(pb);	//타임아웃 설정된거 해제 시킴 반드시 변수에 저장해야만 클리어 가능
+	}
+	
+	let pb2;
+	function pushBtn3() {
+		pb2 = setInterval(function(){console.log("인터벌출력")}, 1000);
+	}
+	
+	function pushBtn4() {
+		clearInterval(pb2);
+	}
+	
+	console.log(screen.availWidth);
+	console.log(screen.availHeight);
+	console.log(screen.width);
+	console.log(screen.height);
+</script>
+</body>
+</html>
