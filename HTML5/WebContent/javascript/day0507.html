@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button>버튼</button>
+<button>버튼2</button>
+<script>
+	function wConsole() {
+		console.log("일반함수");
+	}
+	let btn = document.querySelectorAll("button");
+	btn[0].addEventListener("click", wConsole); 
+	//이벤트를 추가하는 함수 addEventListener
+	//매개변수로는 동작, 실행함수 순으로
+	//펑션 함수 넣는데 () 생략함
+	btn[1].addEventListener("click", function() {
+		document.write("무명함수"); 	//함수에서 도큐먼트 호출하면 화면 다 지우고 호출
+	});
+</script>
+</body>
+</html>
