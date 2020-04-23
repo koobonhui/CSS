@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box {
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+.design {
+	border-radius: 100%;
+	background: #ffc;
+	font-size: 30px;
+	text-align: center;
+	line-height: 300px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<button>버튼1</button>
+		<input type="button" value="버튼2" />
+	</div>
+	<div id="box">박스</div>
+<script src="../js/jquery-3.5.0.min.js"></script>
+<script>
+	$(function() {
+		$("button").parent("div").css({"margin-bottom": "50px"})
+		$("button").click(function() {
+			if($("#box").hasClass("design")) {
+				$("#box").removeClass("design");
+			} else {
+				$("#box").addClass("design");
+			}
+		});
+		$("input:button").click(function() {
+			$(this).attr("type", "text");
+			$(this).removeAttr("value");
+// 			$(this).attr("placeholder", "텍스트 입력");	// 정적인 속성에 사용 (attribute)
+			$(this).prop("placeholder", "텍스트 입력");	// 동적인 속성에 사용 (property)
+		});
+	});
+</script>
+</body>
+</html>
