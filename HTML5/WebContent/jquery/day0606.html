@@ -8,6 +8,7 @@
 <button>버튼1</button>
 <button>바인드</button>
 <button>언바인드</button>
+<button>트리거</button>
 <div></div>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
 <script>
@@ -18,8 +19,11 @@
 				$("div").toggle();
 			});
 		});
-		$("button:last").bind("click", function() {			//언바인드는 이벤트 삭제
+		$("button:eq(2)").bind("click", function() {			//언바인드는 이벤트 삭제
 			$("button").first().unbind("click");		// on, off도 사용가능
+		});
+		$("button:last").click(function() {
+			$("button").eq(0).trigger("click");
 		});
 	});
 </script>
