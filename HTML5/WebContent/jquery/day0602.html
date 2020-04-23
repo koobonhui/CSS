@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1em;
+	font-size: 1em;
+	background: #555;
+	color: #000;
+}
+
+li {
+	margin-top: 20px;
+}
+
+.title {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+.container {
+	margin-top: 35px;
+}
+</style>
+</head>
+<body>
+<h1 class="title">basic :: jQuery basic study</h1>
+<div class="container">
+	<ul	id="tutorial">
+		<li class="html">HTML</li>
+		<li class="css">CSS</li>
+		<li class="css3">CSS3</li>
+		<li class="javascript">JavaScript</li>
+		<li class="jquery">jQuery</li>
+		<li class="blank"></li>
+	</ul>
+	
+	<p id="portfolio">portfolio</p>
+</div>
+<!-- jQuery Code -->
+<script src="../js/jquery-3.5.0.min.js"></script>
+<script>
+	$(function() {
+// 		$(".html").css("background", "red");
+// 		$(".css3 ~ li").css("background", "pink");	// 다음거 다 선택
+// 		$(".html + .css3").css("background", "yellow"); // 바로 다음에 있는 한개만
+		$("ul").find("li").first().css("background", "#ececec");
+		$("ul").find("li").last().html("<em>Blank</em>").css("background", "#ececec");
+		// 메소드 연결해서 쓰는걸 메소드체인이라고 함
+		$("ul").children().eq(2).css("background", "orange");
+		$("ul > li:first").css("font-size", "30px");
+		$("ul > li:first-child").css("font-weight", "900");
+		$("ul > li:nth-child(2)").css("color", "red");
+		$("ul > li").eq(2).css("color", "blue");
+		$("li").even().css("background", "pink");
+		$("li").odd().css("background", "yellowgreen");
+		$("li:gt(3)").css("font-size", "40px");
+		$("p").parent("li").css("background", "skyblue").css("color", "white");
+		$("p").parent("li").css({"background" : "orange", "color" : "white"});
+		$(".css").next().next().text("넥스트로");
+		$(".css").prev().text("앞으로");
+	});
+</script>
+</body>
+</html>
