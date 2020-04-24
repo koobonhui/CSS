@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+.container {
+	width: 400px;
+	height: 300px;
+	border: 5px double #333;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
+}
+
+#userId, #userPw {
+	position: relative;
+	width: 200px;
+	height: 50px;
+	left: 50px;
+	top: 0;
+}
+
+#userIdL, #userPwL {
+	position: relative;
+	display: inline-block;
+	height: 50px;
+	width: 100px;
+	line-height: 50px;
+	text-align: center;
+	left: 50px;
+	top: 0;
+}
+
+input[type="submit"] {
+	width: 300px;
+	height: 50px;
+	margin-left: 50px;
+	 
+}
+</style>
+<body>
+<div class="container">
+	<form method="get" action="day0703.jsp">
+	<!--get은 값이 알려짐 post는 값이 숨겨짐-->
+		<div>
+			<label id="userIdL" for="userId">아이디</label>
+			<!-- for : 레이블을 선택해도 id로 가게해줌 -->
+			<input id="userId" type="text" placeholder="아이디 입력" name="uId" autocomplete="off" required="required" />
+		</div>
+		<div>
+			<label id="userPwL" for="userPw">비밀번호</label>
+			<input id="userPw"type="password" placeholder="비밀번호 입력" name="uPw" autocomplete="off" required="required" />
+		</div>
+		<div>
+			<input type="submit" value="로그인" />
+		</div>
+	</form>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+<script>
+	$(function() {
+// 		$("#userId").focus(function() {		선택 되는 경우
+// 			alert("아이디를 입력하세요");
+// 		});
+		$("#userPw").blur(function() {		//선택이 해제되는 경우
+			alert("비밀번호를 입력했니?");
+		});
+		$("#userId").change(function() {		//	value속성 값이 변경되는 경우
+			$(this).css("background", "pink");
+		});
+	});
+</script>
+</body>
+</html>
