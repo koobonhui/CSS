@@ -31,7 +31,8 @@ header {
 	cursor: pointer;		/*마우스를 위에 올렸을 때 손가락 모양으로 바뀌게 */
 	margin-left: 0;
 	-webkit-transition: margin-left 0.5s ease-out;
-	transition: margin-left 0.5s ease-out;
+	transition: margin-left 0.5s ease-out;		
+	/*속성 , 시간(s를 붙여서 초를 사용함), 효과, 딜레이*/
 }
 
 .menuBtn > span {
