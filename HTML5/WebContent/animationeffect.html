@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@keyframes test {
+	from {
+		background: red;
+		left: 0;
+	}
+	
+	to {
+		background: green;
+		left: 200px;
+	}
+}
+
+div#tofrom {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	animation-name: test;
+	animation-duration: 2s;
+}
+
+@keyframes per {
+	0% {
+		background: red;
+		left: 0;
+		top: 0;
+	}
+	
+	25% {
+		background: yellow;
+		left: 200px;
+		top: 0;
+	}
+	
+	50% {
+		background: green;
+		left: 200px;
+		top: 100px;
+	}
+	
+	75% {
+		background: blue;
+		left: 0px;
+		top: 100px;
+	}
+	
+	100% {
+		background: red;
+		left: 0;
+		top: 0;
+	}
+}
+
+div#percent {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	animation-name: per;
+	animation-duration: 3s;
+	animation-iteration-count: 3;	/*반복횟수*/
+	background: blue;
+	left: 0;
+	top: 100px;
+}
+</style>
+</head>
+<body>
+<div id="tofrom">animation</div>
+<div id="percent">keyframes</div>
+</body>
+</html>
