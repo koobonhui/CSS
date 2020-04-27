@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem; /*16px과 동일*/
+	background: #f1f1f1;
+}
+
+header {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	height: 100px;
+	width: 100%;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+	margin-left: 0;
+}
+
+.menuBtn {
+	display: block;
+	position: relative;
+	top: 45px;
+	left: 35px;
+	width: 18px;
+	height: 12px;
+	cursor: pointer;		/*마우스를 위에 올렸을 때 손가락 모양으로 바뀌게 */
+	margin-left: 0;
+	-webkit-transition: margin-left 0.5s ease-out;
+	transition: margin-left 0.5s ease-out;
+}
+
+.menuBtn > span {
+	display: block;
+	position: absolute;		/*absolute나 relative 쓸려면 부모도 둘중에 하나 써야 적용*/
+	width: 18px;
+	height: 2px;
+	background: black;
+	border-radius: 1px;
+}
+
+.menuBtn > span:first-child {
+	top: 0;
+}
+
+.menuBtn > span:nth-child(2) {
+	top: 5px;
+}
+
+.menuBtn > span:last-child {
+	top: 10px;
+}
+
+nav {
+	position: relative;
+	display: block;
+	position: fixed;
+	top: 0;
+	z-index: 101;
+	width: 300px;
+	height: 100%;
+	overflow: hidden;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+	margin-left: 0;
+	-webkit-transition: margin-left 0.5s ease-out;
+	transition: margin-left 0.5s ease-out;
+}
+
+nav > .menuBox {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+
+nav > .menuBox > .logo {
+	margin-top: 100px;
+}
+
+nav > .menuBox > .logo > a {
+	text-decoration: none;
+	font-size: 1.125em;
+	font-weight: 600;
+	color: #555;
+	margin-left: 50px;
+}
+
+nav > .menuBox > ul {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+nav > .menuBox > ul > li {
+	display: block;
+	margin-bottom: 30px;
+}
+
+nav > .menuBox > ul > li > a {
+	text-decoration: none;
+	font-size: 1em;		/*1em = 16px*/
+	color: #555;
+}
+
+nav > .menuBox > ul > li > a:hover {
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+.overlay {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 100;
+}
+
+/*반응형 CSS*/
+@media (max-width: 750px) {
+	header {
+		display: block;
+	}
+	
+	nav {
+		margin-left: -300px;
+	}
+	
+	.navOn {
+		margin-left: 0px;
+	}
+	
+	.menuBtnOn {
+		transition: all 0.5s ease-out;
+		margin-left: 300px;
+	}
+	
+	.menuBtnOn:first-child {
+		transform: translateY(5px) rotate(45deg);
+	}
+	
+	.menuBtnOn:nth-child(2) {
+		transform: rotate(45deg);
+	}
+	
+	.menuBtnOn:last-child {
+		transform: translateY(-5px) rotate(-45deg);
+	}
+}
