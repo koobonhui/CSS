@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>트렌지션 = 애니메이션</title>
+<style>
+.container {
+	margin: 100px;
+}
+
+.circle {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	margin: 10px;
+	container: hover& {
+	/*&의 뜻은 .circle을 뜻한다 .circle을 extend하는 것도 추가된다*/
+		transform: translateX(200px);
+	}
+}
+	
+.circle0 { 
+	@extend .circle;
+	transition: all 1.5s linear;
+	/*circle의 코드를 포함한다*/
+}
+	
+.circle1 {
+	@extend .circle;
+	background: salmon;
+	transition: all 1.5s ease;
+}
+	
+.circle2 {
+	@extend .circle;
+	background: lightskyblue;
+	transition: all 1.5s ease-in;
+}
+	
+.circle3 {
+	@extend .circle;
+	background: khaki;
+	transition: all 1.5s ease-out;
+}
+	
+.circle4 {
+	@extend .circle;
+	background: pink;
+	transition: all 1.5s ease-in-out;
+}		 
+
+.circle5 {
+	@extend .circle;
+	background: red;
+	transition: all 1.5s cubic-bezier(0, 1, .98, 0);
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="circle0"></div>
+	<div class="circle1"></div>
+	<div class="circle2"></div>
+	<div class="circle3"></div>
+	<div class="circle4"></div>
+	<div class="circle5"></div>
+</div>
+</body>
+</html>
