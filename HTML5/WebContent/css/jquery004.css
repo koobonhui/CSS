@@ -1,0 +1,42 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+img {
+	width: 640px;
+	height: 213px;
+}
+
+.container {
+	position: absolute;
+	width: calc(640px * 3);
+	height: 213px;
+}
+
+.container > div {
+	float: left;
+	position: relative;
+}
+
+section:first-of-type {
+	width: 640px;
+	height: 213px;
+	overflow: hidden;
+	position: relative;
+}
+
+.container > div > h3 {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	trnasform: transrate(-50%, -50%);
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
