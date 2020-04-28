@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 20px;
+	padding: 20px;
+}
+
+section > .menuBox, section > .contentsBox {
+	position: relative;
+}
+
+section > .menuBox > ul > li {
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 20px;
+	float: left;
+	border-radius: 10px 10px 0 0;
+	background: lightgreen;
+	cursor: pointer;
+}
+
+section > .menuBox > ul {
+	list-style: none;
+}
+
+section > .menuBox > ul > li:hover {
+	background: lightgray;
+} 
+
+section > .menuBox > ul > li.on {
+	background: green;
+	color: white;
+}
+
+.menuBox::after, .menuBox::before {
+	display: block;
+	content: "";
+}
+
+.menuBox::after {
+	clear: both;
+}
+
+.con1, .con2, .con3 {
+	position: absolute;
+	width: 800px;
+	height: 500px;
+	left: 0;
+	top: 0;
+	background: green;
+	color: white;
+	line-height: 500px;
+	text-align: center;
+}
+
+.con2, .con3 {
+	display: none;
+}
