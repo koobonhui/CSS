@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 휴대폰 접속을 위한 코드 -->
+<title>반응형 모바일 메뉴</title>
+</head>
+<body>
+<h2></h2><br />
+<h2></h2><br />
+<button>버튼</button>
+<!-- 자바스크립트 -->
+<script src="../js/jquery-3.5.0.min.js"></script>
+<script>
+$(function() {
+	$("html, body").on("mousewheel", function(e) {
+		$("h2:first").text(e.originalEvent.wheelDelta);	// 크롬, 익스플로러 등등
+	});
+	
+	$("html, body").on("DOMmouseScroll", function(e) {
+		$("h2:last").text(e.originalEvent.detail);	// 파이어폭스
+	});
+	
+	$("html, body").on("mousewheel DOMmouseScroll", function(e) {
+		if(e.originalEvent.wheelDelta == -150 || e.originalEvent.detail == -3)
+			console.log("wheel Down");
+		else if(e.originalEvent.wheelDelta == 150 || e.originalEvent.detail == 3)
+			console.log("wheel Up");
+	});
+	
+	$("button").bind("click mouseenter", function() {	// 한칸 띄우고 여러개 이벤트 가능
+		console.log("click");
+	});
+});
+</script>
+</body>
+</html>
