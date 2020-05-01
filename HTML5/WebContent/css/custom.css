@@ -5,14 +5,19 @@
 
 h1, h2, h3, h4, .navbar-brand {
 	font-family: 'CookieRunOTF-Bold';
-	color: #1A237E;	
+	color: #01579B;	/*900*/
 }
 
 body {
 	font-family: 'S-CoreDream-4Regular';
-	background-color: #C5CAE9; 
+	background-color: #B3E5FC; /*100*/
 }
 
 .navbar {
-	border-bottom: #3949AB 3px solid;
+	border-bottom: #039BE5 3px solid; /*600*/
+}
+
+#home {
+	width: 100%;
+	height: 40px;
 }
