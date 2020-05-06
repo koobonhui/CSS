@@ -13,7 +13,7 @@
 		for(Cookie ck : cookie) {
 			out.println(ck.toString() + "<br />");
 		}
-	}
+	} 
 	out.println("<hr />");
 	out.println("서버의 도메인 명 : " + request.getServerName());
 	out.println("<hr />");
