@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head> 
 <body>
 <h2>application 테스트</h2>
 메이저 버전 : <%=application.getMajorVersion() %> <hr />
