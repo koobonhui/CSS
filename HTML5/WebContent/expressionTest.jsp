@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8"%> 
+<!DOCTYPE html> 
 <%!
 	public int sum() {
 		int total = 0;
