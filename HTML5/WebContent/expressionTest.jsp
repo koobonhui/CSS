@@ -3,7 +3,7 @@
 <!DOCTYPE html> 
 <%!
 	public int sum() {
-		int total = 0;
+		int total = 0; 
 		for(int i = 0; i <= 100; i++) {
 			total += i;
 		}
