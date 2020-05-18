@@ -16,7 +16,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="main.jsp">게시판</a>
+  <a class="navbar-brand" href="main1.jsp">게시판</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -50,7 +50,12 @@
 </nav>
 
 <div class = "container pt-3">
-	메인페이지입니다.
+	<div class = "jumbotron">
+		<h1>웹사이트 소개</h1>
+		<p>웹사이트 소개 웹사이트 소개 웹사이트 소개 
+		웹사이트 소개 웹사이트 소개 웹사이트 소개 웹사이트 소개</p>
+		<a class = "btn btn-primary btn-lg" href = "#" role = "button">자세히 알아보기</a>
+	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
