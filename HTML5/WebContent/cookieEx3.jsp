@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>쿠키 예제</h3>
+<h3>쿠키 예제</h3> 
 <form action="cookieEx3.jsp" method="post">
 	<input class="rbtn" type="radio" name="lang" value="korea" checked="checked">
 	<label>한국어</label>
