@@ -11,7 +11,7 @@
 <%
 	bbs.setUserId((String)session.getAttribute("userId"));
 	BbsDAO bbsDAO = new BbsDAO();
-	int result = bbsDAO.write(bbs.getBbsTitle(), bbs.getBbsContent(), bbs.getUserId());
+	int result = bbsDAO.write(bbs.getBbsTitle().replaceAll("<", "&lt;").replaceAll("\n", "<br />"), bbs.getBbsContent().replaceAll("<", "&lt;").replaceAll("\n", "<br />"), bbs.getUserId());
 	if (result != -1) {
 		out.println("<script>");
 		out.println("location.href='bbs.jsp'");

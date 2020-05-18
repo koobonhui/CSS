@@ -12,7 +12,7 @@
 <%
 	bbs.setUserId((String)session.getAttribute("userId"));
 	BbsDAO bbsDAO = new BbsDAO();
-	int result = bbsDAO.modify(bbs.getBbsTitle(), bbs.getBbsContent(), bbs.getBbsId());
+	int result = bbsDAO.modify(bbs.getBbsTitle().replaceAll("<", "&lt;").replaceAll("\n", "<br />"), bbs.getBbsContent().replaceAll("<", "&lt;").replaceAll("\n", "<br />"), bbs.getBbsId());
 	if (result != -1) {
 		out.println("<script>");
 		out.println("location.href='view.jsp?bbsId=" + bbs.getBbsId() +"'");

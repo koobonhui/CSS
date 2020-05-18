@@ -16,6 +16,8 @@ public class BbsDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	private int widthBlock = 5;
+	private int pageRows = 10;
 
 	public BbsDAO() {
 		try {
@@ -95,21 +97,6 @@ public class BbsDAO {
 		return list;
 	}
 	
-	public int totalPage() {
-		String sql = "select count(*) from bbs where bbsAvailable = 1";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getInt(1) / 10 + 1;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return 1; // 아무것도 없으면 1을 리턴
-	}
-	
 	public Bbs getBbs(int bbsId) {
 		Bbs bbs = new Bbs();
 		String sql = "select * from bbs where bbsId = ?";
@@ -157,5 +144,66 @@ public class BbsDAO {
 		}
 
 		return -1;
+	}
+	
+	public int getWidthBlock() {	// 페이지 표시 숫자   << < 1 2 3 4 5 > >>
+		return widthBlock;
+	}
+	
+	public int getPageRows() {		// 한 페이지당 글 수
+		return pageRows;
+	}
+	
+	public int getViewList() {		// 게시판 총 글의 수
+		String sql = "select count(*) from bbs where bbsAvailable = 1";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			return 0;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return -1;
+	}
+	
+	public int totalBlock() {	// 전체 블록의 수
+		if(getViewList() % (widthBlock * pageRows) > 0) {
+			return getViewList() / (widthBlock * pageRows) + 1;
+		}
+		return getViewList() / (widthBlock * pageRows);
+	}
+	
+	public int currentBlock(int pageNumber) {		// 현재 블럭의 수
+		if(pageNumber % widthBlock > 0) {
+			return pageNumber / widthBlock + 1;
+		}
+		return pageNumber / widthBlock;
+	}
+	
+	public int totalPage() {		// 전체 페이지 수를 계산하는 메소드
+		if(getViewList() % pageRows > 0) {
+			return getViewList() / pageRows + 1;
+		}
+		return getViewList() / pageRows;
+	}
+	
+	public boolean nextPage(int pageNumber) {		// 리턴값의 true, false를 변경
+		String sql = "select * from bbs where bbsId < ? and bbsAvailable = 1";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				return false;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 }

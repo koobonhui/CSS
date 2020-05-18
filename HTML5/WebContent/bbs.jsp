@@ -86,9 +86,38 @@
 				</tbody>
 			</table>
 		</div>
-		<button id="pBtn" class="btn btn-success float-left">이전</button>
-		<button id="nBtn" class="btn btn-success float-left ml-1">다음</button>
-		<a href="write.jsp" class="btn btn-primary float-right" id="writeBtn">글쓰기</a>
+		<div class = "clearfix">
+<!-- 			<button id="pBtn" class="btn btn-success float-left">이전</button> -->
+<!-- 			<button id="nBtn" class="btn btn-success float-left ml-1">다음</button> -->
+			<a href="write.jsp" class="btn btn-primary float-right" id="writeBtn">글쓰기</a>		
+		</div>
+		<div>
+			<ul class="pagination">
+	    		<li class='page-item ml-auto <%=pageNumber <= 5 ? "disabled" : "" %>'>
+        			<a <%=pageNumber <= 5 ? "tabindex='-1'" : "" %> class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber - bbsDAO.getWidthBlock()%>">&laquo;</a>
+ 	   			</li>					<!-- 탭 안되게 할려면 -1 -->
+	    		<li class="page-item <%=pageNumber == 1 ? "disabled" : ""%>">
+        			<a <%=pageNumber == 1 ? "tabindex='-1'" : ""%> class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber - 1%>">&lt;</a>
+	   			</li>
+	   			<%
+	   				int start = (bbsDAO.currentBlock(pageNumber) - 1) * bbsDAO.getWidthBlock() + 1;
+	   				int end = start + bbsDAO.getWidthBlock() < bbsDAO.totalPage() + 1 ? start + bbsDAO.getWidthBlock() : bbsDAO.totalPage() + 1;
+	   				for(int i = start; i < end; i++) {
+	   			%>
+		    	<li class="page-item <%=pageNumber == i ? "active" : ""%>">
+		    		<a class="page-link" href="bbs.jsp?pageNumber=<%=i%>"><%=i%></a>
+		    	</li>
+		    	<%
+	   				}
+		    	%>
+		    	<li class="page-item <%=bbsDAO.totalPage() == pageNumber ? "disabled" : ""%>">
+	        		<a <%=bbsDAO.totalPage() == pageNumber ? "tabindex='-1'" : ""%> class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber + 1%>">&gt;</a>
+		    	</li>
+		    	<li class="page-item mr-auto <%=bbsDAO.totalPage() - pageNumber < 5 ? "disabled" : "" %>">
+	        		<a <%=bbsDAO.totalPage() - pageNumber < 5 ? "tabindex='-1'" : "" %> class="page-link" href="bbs.jsp?pageNumber=<%=pageNumber + bbsDAO.getWidthBlock()%>">&raquo;</a>
+		    	</li>
+		 	</ul>
+		</div>
 	</div>
 
 	<!-- Optional JavaScript -->
@@ -99,30 +128,30 @@
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script>
-		$(function(){
-			$("#nBtn").click(function(){
-				<%
-					int nPage = 0;
-				if(pageNumber >= bbsDAO.totalPage()) {
-					nPage = bbsDAO.totalPage();
-				} else {
-					nPage = pageNumber + 1;
-				}
-				%>
-				location.href = "bbs.jsp?pageNumber=<%=nPage %>";				
-			});
-			$("#pBtn").click(function(){
-				<%
-					int pPage = 0;
-					if(pageNumber <= 1) {
-						pPage = 1;
-					} else {
-						pPage = pageNumber - 1;
-					}
-				%>
-				location.href = "bbs.jsp?pageNumber=<%=pPage %>";				
-			});
-		});
+// 		$(function(){
+// 			$("#nBtn").click(function(){
+<%-- 				<% --%>
+// 					int nPage = 0;
+// 					if(pageNumber >= bbsDAO.totalPage()) {
+// 					nPage = bbsDAO.totalPage();
+// 				} else {
+// 					nPage = pageNumber + 1;
+// 				}
+<%-- 				%> --%>
+<%-- 				location.href = "bbs.jsp?pageNumber=<%=nPage %>";				 --%>
+// 			});
+// 			$("#pBtn").click(function(){
+<%-- 				<% --%>
+// 					int pPage = 0;
+// 					if(pageNumber <= 1) {
+// 						pPage = 1;
+// 					} else {
+// 						pPage = pageNumber - 1;
+// 					}
+<%-- 				%> --%>
+<%-- 				location.href = "bbs.jsp?pageNumber=<%=pPage %>";				 --%>
+// 			});
+// 		});
 	</script>
 </body>
 </html>
