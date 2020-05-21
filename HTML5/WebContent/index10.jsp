@@ -18,7 +18,7 @@
 <div class = "loginbar">
 	<span style = "margin-right: 30px"><%=userId.equals("") ? "" : userId + " 님 반갑습니다."%></span>
 	<%=userId.equals("") ? "<a href = 'login10.jsp'>로그인</a>" : "<a href = 'logoutAction10.jsp'>로그아웃</a>"%>
-	<a href = "join10.jsp">회원가입</a>
+	<%=userId.equals("") ? "<a href = 'join10.jsp'>회원가입</a>" : ""%>
 </div>
 <hr />
 <header>
