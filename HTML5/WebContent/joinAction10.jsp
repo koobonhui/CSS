@@ -19,10 +19,11 @@
 	userbean.setuCp(numbers);
 	UserDAO userdao = new UserDAO();
 	int result = userdao.join(userbean);
+	userdao.uClose();
 	
 	if(result != -1) {
-		response.sendRedirect("index10.jsp");
 		session.setAttribute("userId", userbean.getuEmail());
+		response.sendRedirect("index10.jsp");
 	} else {
 		out.println("<script>");
 		out.println("alert('회원가입에 실패했습니다. 관리자에게 연락');");
