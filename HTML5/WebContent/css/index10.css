@@ -23,6 +23,13 @@ img {
 	border: none;
 }
 
+hr {
+	margin-top: 5px;
+	height:1px;
+	border-width:0;
+	background-color:gray;
+}
+
 #logo {
 	height: 40px;
 }
@@ -30,6 +37,14 @@ img {
 header {
     width: 1200px; 
     height: 100px;
+}
+
+.loginbar {
+	text-align: right;
+}
+
+.loginbar > a {
+	margin-right: 20px;
 }
 
 header h1 {

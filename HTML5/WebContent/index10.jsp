@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String userId = "";
+	request.setCharacterEncoding("UTF-8");
+	if(session.getAttribute("userId") != null) {
+		userId = (String)session.getAttribute("userId");
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +15,12 @@
 <link rel="stylesheet" href="css/index10.css" />
 </head>
 <body>
+<div class = "loginbar">
+	<span style = "margin-right: 30px"><%=userId.equals("") ? "" : userId + " 님 반갑습니다."%></span>
+	<%=userId.equals("") ? "<a href = 'login10.jsp'>로그인</a>" : "<a href = 'logoutAction10.jsp'>로그아웃</a>"%>
+	<a href = "join10.jsp">회원가입</a>
+</div>
+<hr />
 <header>
 	<h1>
 		<a href="#">
@@ -96,9 +109,9 @@
 				<label for="tabmenu2">갤러리</label>
 				<div class="tabCon">
 					<ul>
-						<li><a href="#"><img src="imgs/gallery01.png" alt="갤러리01"></a></li>
-						<li><a href="#"><img src="imgs/gallery02.png" alt="갤러리02"></a></li>
-						<li><a href="#"><img src="imgs/gallery03.png" alt="갤러리03"></a></li>
+						<li><a href="#"><img src="-" alt="갤러리01"></a></li>
+						<li><a href="#"><img src="-" alt="갤러리02"></a></li>
+						<li><a href="#"><img src="-" alt="갤러리03"></a></li>
 					</ul>
 				</div>
 			</li>
@@ -108,26 +121,26 @@
 	<div class="banner">
 		<ul>
 			<li>
-				<a href="#"><img src="images/banner.png" alt="배너이미지"></a>
+				<a href="#"><img src="-" alt="배너이미지"></a>
 			</li>
 		</ul>
 	</div>
 	
 	<div class="short">
 		<div class="shortbtn">
-			<a href="#"><img src="images/short01.png" alt="바로가기01"></a>
+			<a href="#"><img src="-" alt="바로가기01"></a>
 	 	</div>
 		<div class="shortbtn">
-			<a href="#"><img src="images/short02.png" alt="바로가기02"></a>
+			<a href="#"><img src="-" alt="바로가기02"></a>
 		</div>
 		<div class="shortbtn">
-			<a href="#"><img src="images/short03.png" alt="바로가기03"></a>
+			<a href="#"><img src="-" alt="바로가기03"></a>
 		</div>
 	</div>
 </div>
 
 <footer>
-	<h1><a href="#"><img src="images/logo_black.png" alt="logo_black"></a></h1>
+	<h1><a href="#"><img src="-" alt="logo_black"></a></h1>
 	
 	<div class="copyright">
 		<p>

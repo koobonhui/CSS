@@ -1,0 +1,55 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+.clearFix::before, .clearFix::after {
+	display: block;
+	content: "";
+}
+
+.clearFix::after {
+	clear: both;
+}
+
+section > div.container {
+	width: 800px;
+}
+
+form > div {
+	border-bottom: 1px dotted lightgray;
+}
+
+form > div > div {
+	float: left;
+}
+
+form > div > div:first-child {
+	width: 190px;
+	height: 50px;
+	padding-left: 10px;
+	line-height: 50px;
+	text-align: left;
+	background: #f1f1f1;
+}
+
+form > div > div:last-child {
+	width: 560px;
+	padding: 0 20px;
+	height: 50px;
+	line-height: 50px;
+}
+
+label > span {
+	color: red;
+}
+
+.clearFix:last-child {
+	text-align: right;
+	padding-right: 20px;
+	box-sizing: border-box;
+	line-height: 40px;
+}
