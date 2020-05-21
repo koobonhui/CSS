@@ -10,7 +10,7 @@
 <body>
 <section>
 	<div class = "container">
-		<form name = "joinForm" action="joinAction10.jsp" method="post">
+		<form name = "joinForm" action="joinAction.do" method="post">
 			<p><small>* 은 필수 입력 항목</small></p>
 			
 			<hr />

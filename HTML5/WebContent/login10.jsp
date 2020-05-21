@@ -24,7 +24,7 @@ table {
 </style>
 </head>
 <body>
-<form name = "loginform" action="loginAction10.jsp" method="post">
+<form name = "loginform" action="loginAction.do" method="post">
 	<table>
 		<tr>
 			<td colspan = "2" class = "td_title">로그인 페이지</td>

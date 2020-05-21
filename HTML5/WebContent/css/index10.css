@@ -249,6 +249,11 @@ footer h1 {
     float: left;
 }
 
+img[alt = "logo_black"] {
+	width: 200px;
+	height: 40px;
+}
+
 .copyright {
     width: 800px; 
     height: 100px; 
