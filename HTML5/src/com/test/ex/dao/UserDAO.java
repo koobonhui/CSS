@@ -75,4 +75,22 @@ public class UserDAO {
 		}
 		return -2; // 디비오류
 	}
+	
+	public int Check(String uEmail) {
+		String sql = "select uEmail from user where uEmail = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, uEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString(1).equals(uEmail)) {
+					return 0;	// 아이디 중복
+				}
+			}
+			return 1; // 사용가능
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -2; // 디비오류
+	}
 }

@@ -22,7 +22,10 @@
 			
 			<div class = "clearFix">
 				<div><label><span>*</span> 회원 아이디(이메일)</label></div>
-				<div><input type = "email" name = "uEmail" required="required" autocomplete="off"/> <button type = "button">중복확인</button></div>
+				<div>
+					<input type = "email" name = "uEmail" required="required" autocomplete="off"/> 
+					<button type = "button">중복확인</button>
+				</div>
 			</div>
 			
 			<div class = "clearFix">
@@ -94,5 +97,8 @@
 		</form>
 	</div>
 </section>
+<!-- 자바스크립트 -->
+<script src="js/jquery-3.5.0.min.js"></script>
+<script src="js/Check.js"></script>
 </body>
 </html>
