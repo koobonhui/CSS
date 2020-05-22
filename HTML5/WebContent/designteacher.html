@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+}
+
+.clearfix::before, .clearfix::after {
+	display: block;
+	content: "";
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+header, aside, section, footer {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+aside {
+	top: 166px;
+}
+
+aside > div {
+	float: left;
+}
+
+.aright {
+	background-image: url("imgs/navigation_background.gif");
+}
+
+.arightbody1 > div > img {
+	margin-left: 9px;
+}
+
+.arightbody2 > div > img {
+	margin: 0 auto;
+	margin-bottom: 4px;
+}
+
+section {
+	top: 166px;
+	left: 206px;
+	background-image: url("imgs/main_background.jpg");
+}
+
+section > div {
+	float: left;
+}
+
+.content3 > div > img {
+	float: right;
+}
+
+footer {
+	top: calc(599px + 166px);
+}
+</style>
+</head>
+<body>
+	<header>
+		<img src = "imgs/top.jpg" alt="-" />
+	</header>
+	<aside class = "clearfix">
+		<div class = "aleft">
+			<img src = "imgs/left_edge.jpg" alt="-" />
+		</div>
+		<div class = "aright">
+			<div class = "arighthead">
+				<img src = "imgs/navigation_top.gif" alt="-" />
+			</div>
+			<div class = "arightbody1">
+				<div><img src = "imgs/location_01.gif" alt="-" /></div>
+				<div><img src = "imgs/location_02.gif" alt="-" /></div>
+				<div><img src = "imgs/location_03.gif" alt="-" /></div>
+				<div><img src = "imgs/location_04.gif" alt="-" /></div>
+			</div>
+			<div class = "arightbody2">
+				<div><img src = "imgs/banner.gif" alt="-" /></div>
+				<div><img src = "imgs/banner.gif" alt="-" /></div>
+				<div><img src = "imgs/banner.gif" alt="-" /></div>
+				<div><img src = "imgs/banner.gif" alt="-" /></div>
+			</div>
+			<div class = "arightfoot">
+				<img src = "imgs/navigation_bottom.gif" alt="-" />
+			</div>
+		</div>
+	</aside>
+	
+	<section class = "clearfix">
+		<div class = "sleft">
+			<div class = "content1">
+				<img src = "imgs/beauty_01.jpg" alt="-" />
+			</div>
+			<div class = "content2">
+				<img src = "imgs/main_top.jpg" alt="-" />
+			</div>
+			<div class = "content3">
+				<div><img src = "imgs/main_01.jpg" alt="-" /></div>
+				<div><img src = "imgs/main_02.jpg" alt="-" /></div>
+				<div><img src = "imgs/main_03.jpg" alt="-" /></div>
+				<div><img src = "imgs/main_04.jpg" alt="-" /></div>
+				<div><img src = "imgs/main_05.jpg" alt="-" /></div>
+			</div>
+			<div class = "contentFoot">
+				<img src = "imgs/main_bottom.jpg" alt="-" />
+			</div>
+		</div>
+		<div class = "sright">
+			<img src = "imgs/beauty_02.jpg" alt="-" />
+		</div>
+	</section>
+	<footer>
+		<img src = "imgs/bottom.jpg" alt="-" />
+	</footer>
+</body>
+</html>
