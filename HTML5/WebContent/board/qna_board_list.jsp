@@ -53,75 +53,79 @@ table {
 </style>
 </head>
 <body>
-<!-- 게시판 리스트 -->
-<section id="listForm">
-	<h2>
-		글 목록<a href="boardWriteForm.do">게시판글쓰기</a>
-	</h2>
-		<%
-			if(articleList != null && listCount > 0){
-		%>
+	<!-- 게시판 리스트 -->
+
+	<section id="listForm">
+		<h2>
+			글 목록<a href="/html5/boardWriteForm.do">게시판글쓰기</a>
+		</h2>
 		<table>
+			<%
+if(articleList != null && listCount > 0){
+%>
 
-		<tr id="tr_top">
-			<td>번호</td>
-			<td>제목</td>
-			<td>작성자</td>
-			<td>날짜</td>
-			<td>조회수</td>
-		</tr>
+			<tr id="tr_top">
+				<td>번호</td>
+				<td>제목</td>
+				<td>작성자</td>
+				<td>날짜</td>
+				<td>조회수</td>
+			</tr>
 
-		<%
-			for(int i=0;i<articleList.size();i++){
-		%>
-		
-		<tr>
-			<td><%=articleList.get(i).getBOARD_NUM()%></td>
-			<td>
-				<%if(articleList.get(i).getBOARD_RE_LEV()!=0){ %> <%for(int a=0;a<=articleList.get(i).getBOARD_RE_LEV()*2;a++){ %>
-				&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> 
-				<a href="boardDetail.do?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
-					<%=articleList.get(i).getBOARD_SUBJECT()%>
+			<%
+		for(int i=0;i<articleList.size();i++){
+			
+	%>
+			<tr>
+				<td><%=articleList.get(i).getBOARD_NUM()%></td>
+
+				<td>
+					<%if(articleList.get(i).getBOARD_RE_LEV()!=0){ %> <%for(int a=0;a<=articleList.get(i).getBOARD_RE_LEV()*2;a++){ %>
+					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> <a
+					href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
+						<%=articleList.get(i).getBOARD_SUBJECT()%>
 				</a>
-			</td>
-			<td><%=articleList.get(i).getBOARD_NAME() %></td>
-			<td><%=articleList.get(i).getBOARD_DATE() %></td>
-			<td><%=articleList.get(i).getBOARD_READCOUNT() %></td>
-		</tr>
+				</td>
+
+				<td><%=articleList.get(i).getBOARD_NAME() %></td>
+				<td><%=articleList.get(i).getBOARD_DATE() %></td>
+				<td><%=articleList.get(i).getBOARD_READCOUNT() %></td>
+			</tr>
 			<%} %>
 		</table>
 	</section>
 
 	<section id="pageList">
-		<%if(nowPage<=1){ %>
-		[이전]&nbsp;
-		<%}else{ %>
-		<a href="boardList.do?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
-		<%} %>
-
-		<%for(int a=startPage;a<=endPage;a++){
-				if(a==nowPage){%>
-		[<%=a %>]
-		<%}else{ %>
-		<a href="boardList.do?page=<%=a %>">[<%=a %>]
-		</a>&nbsp;
-		<%} %>
-		<%} %>
-
-		<%if(nowPage>=maxPage){ %>
-		[다음]
-		<%}else{ %>
-		<a href="boardList.do?page=<%=nowPage+1 %>">[다음]</a>
-		<%} %>
-	<%
+			<%if(nowPage<=1){ %>
+			[이전]&nbsp;
+			<%}else{ %>
+			<a href="/html5/boardList.do?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
+			<%} %>
+	
+			<%for(int a=startPage;a<=endPage;a++){
+					if(a==nowPage){%>
+			[<%=a %>]
+			<%}else{ %>
+			<a href="/html5/boardList.do?page=<%=a %>">[<%=a %>]
+			</a>&nbsp;
+			<%} %>
+			<%} %>
+	
+			<%if(nowPage>=maxPage){ %>
+			[다음]
+			<%}else{ %>
+			<a href="/html5/boardList.do?page=<%=nowPage+1 %>">[다음]</a>
+			<%} %>
+		</section>
+		<%
 	    }
 		else
 		{
+		%>
+		<section id="emptyArea">등록된 글이 없습니다.</section>
+		<%
+		}
 	%>
-		<article id="emptyArea">등록된 글이 없습니다.</article>>
-	<%
-	}
-	%>
-	</section>
+
 </body>
 </html>
