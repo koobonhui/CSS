@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<style>
+* { 
+	width: 100%; 
+	padding: 0; 
+	margin: 0;
+}
+
+body { 
+	margin: 0 auto; 
+	width: 100%;
+}
+
+li { 
+	list-style: none;
+}
+
+a { 
+	text-decoration: none; 
+	color: inherit;
+}
+
+img { 
+	border: none;
+}
+
+#logo {
+	height: 40px;
+}
+
+header {
+    width: 100%; 
+    height: 100px;
+}
+
+header h1 {
+    width: 20%; 
+    height: 100px; 
+    padding-top: 30px; 
+    float: left;
+}
+
+.mnav {
+    width: 80%; 
+    height: 100px; 
+    float: left;
+}
+
+.mnav > ul > li {
+    width: 25%; 
+    height: 40px; 
+    margin-top: 30px;
+    position: relative; 
+    float: left;
+}
+
+.mnav > ul > li > a {
+    display: block; 
+    width: 25%px; 
+    height: 40px;
+    text-align: center; 
+    line-height: 40px;
+    font-size: 18px; 
+    color: #222328; 
+    font-weight: bold;
+}
+
+.mnav > ul > li > a:hover {
+    background-color: #5b75f5; 
+    color: #fff;
+}
+
+#main {
+    width: 100%; 
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#main ul {
+    width: 100%;
+    height: 380px; 
+    position: absolute;
+}
+
+#bannertext {
+	position: absolute;
+	top: 20%;
+	left: 7%;
+	color: white;
+}
+
+#menus {
+	width: 100%; 
+	height: 400px;
+}
+
+#menus > div {
+  	height: 400px;
+  	margin-bottom: 10px;	
+}
+
+#menu1 {
+  background:url("img/1.jpg") no-repeat center;
+  background-size:cover;
+}
+
+#menu2 {
+  background:url("img/2.jpg") no-repeat center;
+  background-size:cover;
+}
+
+#menu3 {
+  background:url("img/3.jpg") no-repeat center;
+  background-size:cover;
+}
+
+#menu4 {
+  background:url("img/4.jpeg") no-repeat center;
+  background-size:cover;
+}
+
+#menu1, #menu2, #menu3, #menu4 {
+  width:100%;
+}
+
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: block;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+@media all and (min-width:768px) {
+	#menus {
+		display: flex; /* 플렉서블 박스 레이아웃 적용 */
+		-ms-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap; /* 여러 줄에 걸쳐 표시 */
+		justify-content: space-between; /* 화면 양쪽에 바짝 붙이기  */
+	}
+	
+	#menu1, #menu2, #menu3, #menu4 {
+		width: 49%;
+	}
+	
+	#bannertext {
+		font-size: 15px;
+	}
+}
+
+@media all and (min-width:992px) {
+	#menu1, #menu2, #menu3 {
+		width:33%;
+	}
+	
+	#menu4 {
+		width: 100%;
+	}
+	
+	#bannertext {
+		font-size: 30px;
+	}
+}
+</style>
+</head>
+<body>
+<header>
+	<h1>
+		<a href="#">
+			<img id = "logo" src = "img/cpu.svg" alt = "로고"/>
+		</a>
+	</h1>
+	
+	<nav class = "mnav">
+		<ul>
+			<li><a href="#">학교소개</a></li>
+			
+			<li><a href="#">모집과정</a></li>
+			
+			<li><a href="#">과정소개</a></li>
+			
+			<li><a href="#">입학상담</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div id = "main clearfix">
+	<ul>
+		<li>
+			<a href="#"><img src="img/banner1.jpg" alt="메인이미지1"></a>
+		</li>
+	</ul>
+	<div id = "bannertext">
+		<label><h3>당신의 꿈을 이루세요!</h3> 
+			<h3>영남기술직업전문학교가 함께 하겠습니다.</h3></label>
+	</div>
+</div>
+
+<div id = "menus">
+	<div id = "menu1"></div>
+	<div id = "menu2"></div>
+	<div id = "menu3"></div>
+	<div id = "menu4"></div>
+</div>
+</body>
+</html>

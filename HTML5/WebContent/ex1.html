@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+header {
+	width: 1200px;
+	background: url('img/dan.jpg');
+}
+
+section {
+	width: 1200px;
+	height: 700px;
+}
+
+header > nav > ul > li {
+	float: left;
+	padding: 10px;
+	width: 280px;
+	height: 20px;
+	text-align: center;
+}
+
+header > nav > ul > li > a {
+	color: black;
+}
+
+header > nav > ul > li:nth-child(2n+1) {
+	background: lightgray;
+}
+
+header > nav > ul > li:nth-child(2n) {
+	background: gray;
+}
+
+header > div > h3 {
+	width: 200px; 
+    height: 100px; 
+    margin-top: 60px;
+    padding-left: 20px; 
+    float: left;
+}
+
+header > .clearfix > .subnav {
+	float: right;
+} 
+
+header > .clearfix > .subnav > ul > li {
+	float: left;
+	margin-top: 60px;
+	margin-right: 30px;
+}
+
+header > .clearfix > .subnav > ul > li > a {
+	color: black;
+}
+
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: block;
+}
+
+.clearfix::after, .clearfix::before {
+	clear: both;
+}
+
+.text1, .imgs {
+	width: 400px;
+	float: left;
+}
+
+.imgs > img {
+	width: 400px;
+	height: 300px;
+}
+
+.subnav > ul > li > img {
+	width: 30px;
+	height: 20px;
+}
+
+.pos1, .pos2, .pos3, .pos4, .pos5, .pos6 {
+	position: relative;
+}
+
+.text21, .text22, .text23, .text24, .text25, .text26 {
+	color: white;
+	position: absolute;
+	top: 250px;
+	left: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+	<nav class = "clearfix">
+		<ul>
+			<li><a href = "-">봄</a></li>
+			<li><a href = "-">여름</a></li>
+			<li><a href = "-">가을</a></li>
+			<li><a href = "-">겨울</a></li>
+		</ul>
+	</nav>
+	
+	<div class = "clearfix">
+		<h3>단풍 축제</h3>
+		<div class = "subnav">
+			<ul>
+				<li><img src = "img/icon.svg"><a href = "-">불꽃문화</a></li>
+				<li><img src = "img/icon2.svg"><a href = "-">대하전어</a></li>
+				<li><img src = "img/icon3.svg"><a href = "-">먹거리</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<section>
+	<div class = "text1">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "text1">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "text1">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "imgs clearfix pos1">
+		<img src = "img/1.jpg">
+		<div class = "text21">
+			<h2>정선</h2>
+		</div>
+	</div>
+	
+	<div class = "imgs pos2">
+		<img src = "img/2.jpg">
+		<div class = "text22">
+			<h2>정선</h2>
+		</div>
+	</div>
+	
+	<div class = "imgs pos3">
+		<img src = "img/3.jpg">
+		<div class = "text23">
+			<h2>정선</h2>
+		</div>
+	</div>
+	
+	<div class = "text1 clearfix">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "text1">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "text1">
+		<label><h3>민등산억새꽃축제</h3>
+		<small>2010.03.04~2019.04.03</small></label>
+	</div>
+	
+	<div class = "imgs clearfix pos4">
+		<img src = "img/1.jpg">
+		<div class = "text24">
+			<h2>정선</h2>
+		</div>
+	</div>
+	
+	<div class = "imgs pos5">
+		<img src = "img/2.jpg">
+		<div class = "text25">
+			<h2>정선</h2>
+		</div>
+	</div>
+	
+	<div class = "imgs pos6">
+		<img src = "img/3.jpg">
+		<div class = "text26">
+			<h2>정선</h2>
+		</div>
+	</div>
+</section>
+</body>
+</html>
