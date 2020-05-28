@@ -82,7 +82,7 @@ table {
 				<input type="submit" value="답변글등록" />&nbsp;&nbsp; 
 				<input type="reset" value="다시작성" />
 				<input type = "button" value = "이전으로" onclick = "history.back()">
-			</article>>
+			</article>
 		</form>
 	</section>
 </body>
