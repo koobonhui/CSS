@@ -74,13 +74,14 @@ table {
 			<tr>
 				<td class = "td_left"><label for = "board_file">파일첨부</label></td>
 				<td class = "td_right">
-					<input type = "file" name = "BOARD_FILE" id = "board_file" required="required">
+					<input type = "file" name = "BOARD_FILE" id = "board_file">
 				</td>
 			</tr>
 		</table>
 		<section id = "commandCell">
 			<input type = "submit" value = "등록">&nbsp;&nbsp;
-			<input type = "reset" value = "다시쓰기">
+			<input type = "reset" value = "다시쓰기">&nbsp;&nbsp;
+			<input type = "button" value = "목록" onclick = "history.back()">
 		</section>
 	</form>
 </section>

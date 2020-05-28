@@ -46,27 +46,30 @@ h2 {
 <!-- 게시판 수정 -->
 	<section id="articleForm">
 		<h2>글 내용 상세보기</h2>
-		<section id="basicInfoArea">
+		<article id="basicInfoArea">
 			제 목 :
 			<%=article.getBOARD_SUBJECT()%>
+			<br />
 			첨부파일 :
 			<%if(!(article.getBOARD_FILE()==null)){ %>
-			<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
+<%-- 			<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %> --%>
+<!-- 			</a> -->
+			<a download href="boardUpload/<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
 			</a>
 			<%} %>
-		</section>
-		<section id="articleContentArea">
+		</article>
+		<article id="articleContentArea">
 			<%=article.getBOARD_CONTENT() %>
-		</section>
+		</article>
 	</section>
 	<section id="commandList">
 		<a
-			href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
+			href="/HTML5/boardReplyForm.do?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[답변] </a> <a
-			href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>">
+			href="/HTML5/boardModifyForm.do?board_num=<%=article.getBOARD_NUM() %>">
 			[수정] </a> <a
-			href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
-			[삭제] </a> <a href="boardList.bo?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;
+			href="/HTML5/boardDeleteForm.do?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
+			[삭제] </a> <a href="/HTML5/boardList.do?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;
 	</section>
 </body>
 </html>

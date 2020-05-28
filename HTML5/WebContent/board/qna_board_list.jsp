@@ -54,7 +54,7 @@ table {
 </head>
 <body>
 	<section id="listForm">
-		<h2>글목록<a href="/HTML5/borderWriteForm.do">게시판글쓰기</a></h2>
+		<h2>글목록<a href="/HTML5/boardWriteForm.do">게시판글쓰기</a></h2>
 		<%
 		if(articleList != null && listCount > 0) {
 		%>
