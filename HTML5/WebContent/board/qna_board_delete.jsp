@@ -20,8 +20,7 @@
 </head>
 <body>
 <section id = "passForm">
-<form name="deleteForm" action="/HTML5/boardDeletePro.do?board_num=<%=board_num %>" 
-	method="post">
+<form name="deleteForm" action="/HTML5/boardDeletePro.do?board_num=<%=board_num %>" method="post">
 <input type = "hidden" name = "page" value = "<%=nowPage %>"/>
 <table>
 <tr>
@@ -29,7 +28,7 @@
 		<label>글 비밀번호 : </label>
 	</td>
 	<td>
-		<input name="BOARD_PASS" type="password">
+		<input name="board_pass" type="password">
 	</td>
 </tr>
 <tr>

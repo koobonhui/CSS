@@ -67,7 +67,7 @@ table {
 				<td>조회수</td>
 			</tr>
 			<%
-			for(int i=0; i<articleList.size(); i++) {
+				for(int i=0; i<articleList.size(); i++) {
 			%>
 			<tr>
 				<td><%=articleList.get(i).getBOARD_NUM() %></td>

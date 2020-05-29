@@ -20,7 +20,8 @@ public class BoardWriteProAction implements Action {
 		String saveFolder="/boardUpload";
 		int fileSize=5*1024*1024;
 		ServletContext context = request.getServletContext();
-		realFolder=context.getRealPath(saveFolder);   		
+//		realFolder=context.getRealPath(saveFolder); 
+		realFolder = "c:" + saveFolder;
 		MultipartRequest multi=new MultipartRequest(request,
 				realFolder,
 				fileSize,

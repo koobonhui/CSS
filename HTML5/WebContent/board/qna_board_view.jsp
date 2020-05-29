@@ -52,10 +52,10 @@ h2 {
 			<br />
 			첨부파일 :
 			<%if(!(article.getBOARD_FILE()==null)){ %>
-<%-- 			<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %> --%>
-<!-- 			</a> -->
-			<a download href="boardUpload/<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
+			<a href="file_down1.jsp?downFile=<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %>
 			</a>
+<%-- 			<a download href="boardUpload/<%=article.getBOARD_FILE()%>"> <%=article.getBOARD_FILE() %> --%>
+<!-- 			</a> -->
 			<%} %>
 		</article>
 		<article id="articleContentArea">
@@ -66,7 +66,7 @@ h2 {
 		<a
 			href="/HTML5/boardReplyForm.do?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[답변] </a> <a
-			href="/HTML5/boardModifyForm.do?board_num=<%=article.getBOARD_NUM() %>">
+			href="/HTML5/boardModifyForm.do?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[수정] </a> <a
 			href="/HTML5/boardDeleteForm.do?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">
 			[삭제] </a> <a href="/HTML5/boardList.do?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;

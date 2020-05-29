@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");
+	String nowPage = (String)request.getAttribute("page");
 %>
 
 <!DOCTYPE html>
@@ -14,11 +15,10 @@
 		modifyform.submit();
 	}
 	</script>
-	<style type="text/css">
-   #registForm{
+	<style>
+   #writeForm{
       width: 500px;
       height: 600px;
-      border : 1px solid red; 
       margin:auto; 
    }   
    h2{
@@ -49,6 +49,7 @@
 <h2>게시판글수정</h2>
 <form action="/HTML5/boardModifyPro.do" method="post" name = "modifyform">
 <input type = "hidden" name = "BOARD_NUM" value = "<%=article.getBOARD_NUM()%>"/>
+<input type = "hidden" name = "page" value = "<%=nowPage%>"/>
 <table>
 	<tr>
 		<td class="td_left">
