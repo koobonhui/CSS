@@ -18,6 +18,24 @@
 	url = "jdbc:mysql://localhost:3306/bbs?useUnicode=true&amp;serverTimezone=Asia/Seoul"
 	maxActive = "500" maxIdle = "100" />
 	
+	<Resource name = "jdbc/exam" auth = "Container" type ="javax.sql.DataSource"
+	username = "root" password="yt1234" driverClassName = "com.mysql.cj.jdbc.Driver"
+	factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	url = "jdbc:mysql://localhost:3306/exam?useUnicode=true&amp;serverTimezone=Asia/Seoul"
+	maxActive = "500" maxIdle = "100" />
+	
+	<Resource name = "jdbc/model2" auth = "Container" type ="javax.sql.DataSource"
+	username = "root" password="yt1234" driverClassName = "com.mysql.cj.jdbc.Driver"
+	factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	url = "jdbc:mysql://localhost:3306/model2?useUnicode=true&amp;serverTimezone=Asia/Seoul"
+	maxActive = "500" maxIdle = "100" />
+	
+	<Resource name = "jdbc/dog" auth = "Container" type ="javax.sql.DataSource"
+	username = "java" password="java" driverClassName = "oracle.jdbc.driver.OracleDriver"
+	factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+	maxActive = "500" maxIdle = "100" />
+	
 	
 <!-- 	디비를 추가할 때 마다 리소스 추가해야함 -->
 </context>
