@@ -14,6 +14,7 @@ import action689.DogCartAddAction;
 import action689.DogCartListAction;
 import action689.DogListAction;
 import action689.DogViewAction;
+import action689.cookieRemoveAction;
 import vo689.ActionForward;
 
 @WebServlet("*.dog")
@@ -68,6 +69,13 @@ public class DogFrontController extends HttpServlet {
 			}
 		} else if(command.equals("/dogCartList.dog")) {
 			action = new DogCartListAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/cookieRemove.dog")) {
+			action = new cookieRemoveAction();
 			try {
 				forward = action.excute(request, response);
 			} catch(Exception e) {

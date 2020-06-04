@@ -89,6 +89,7 @@ table {
 					</c:forEach>
 				</tr>
 			</table>
+			<a href = "cookieRemove.dog" style = "text-align : center;">쿠키삭제</a>
 		</div>
 	</c:if>
 </section>
