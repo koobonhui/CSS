@@ -50,7 +50,7 @@ table {
 <body>
 <section id = "listForm">
 	<c:if test="${dogList != null}">
-		<h2>개 상품 목록  <a href="dogRegistForm.dog">개상품등록</a></h2>
+		<h2>개 상품 목록  <a href="dogRegistForm.dog">개상품등록</a> <a href="dogCartList.dog">장바구니</a></h2>
 		<table>
 			<tr>
 				<c:forEach var = "dog" items = "${dogList }" varStatus = "status">

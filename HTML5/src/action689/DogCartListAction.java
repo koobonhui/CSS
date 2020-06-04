@@ -19,9 +19,11 @@ public class DogCartListAction implements Action689 {
 		int totalMoney = 0;
 		int money = 0 ;
 		
-		for (int i = 0; i < cartList.size(); i++) {
-			money = cartList.get(i).getPrice() * cartList.get(i).getQty();
-			totalMoney += money;
+		if(cartList != null) {
+			for (int i = 0; i < cartList.size(); i++) {
+				money = cartList.get(i).getPrice() * cartList.get(i).getQty();
+				totalMoney += money;
+			}
 		}
 
 		request.setAttribute("totalMoney", totalMoney);

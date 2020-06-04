@@ -12,8 +12,10 @@ public class cookieRemoveAction implements Action689 {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Cookie[] cookies = request.getCookies();
 		for(Cookie cookie : cookies) {
-			cookie.setMaxAge(0);
-			response.addCookie(cookie);
+			if(cookie.getName().startsWith("today")) {
+				cookie.setMaxAge(0);
+				response.addCookie(cookie);				
+			}
 		}
 		ActionForward forward = new ActionForward("dogList.dog", true);
 		return forward;

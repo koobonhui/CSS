@@ -28,7 +28,7 @@ table {
 
 .div_empty {
    text-align: center;
-   background-color:
+   background-color: red;
 }
 
 .td_command {
@@ -108,7 +108,7 @@ function checkQty(kind,qty) {
 	    	<tr id = "select">
 	    		<td colspan = "6">
 	    		<select id = "startMoney" name = "startMoney">
-	    			<option>=최하=</option>
+	    			<option value = "0">=최하=</option>
 	    			<c:choose>
 	    				<c:when test = "${startMoney == 1000 }">
 	    					<option selected = "selected">1000</option>
@@ -148,7 +148,7 @@ function checkQty(kind,qty) {
 	    		</select>
 	    		
 	    		<select id = "endMoney" name = "endMoney">
-	    			<option>=최고=</option>
+	    			<option value = "${Integer.MAX_VALUE }">=최고=</option>
 	    			<c:choose>
 	    				<c:when test = "${endMoney == 1000 }">
 	    					<option selected = "selected">1000</option>

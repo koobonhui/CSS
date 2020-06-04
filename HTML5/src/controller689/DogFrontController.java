@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import action689.Action689;
 import action689.DogCartAddAction;
 import action689.DogCartListAction;
+import action689.DogCartSearchAction;
 import action689.DogListAction;
 import action689.DogViewAction;
 import action689.cookieRemoveAction;
@@ -76,6 +77,13 @@ public class DogFrontController extends HttpServlet {
 			}
 		} else if(command.equals("/cookieRemove.dog")) {
 			action = new cookieRemoveAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogCartSearch.dog")) {
+			action = new DogCartSearchAction();
 			try {
 				forward = action.excute(request, response);
 			} catch(Exception e) {
