@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import action689.Action689;
 import action689.DogCartAddAction;
 import action689.DogCartListAction;
+import action689.DogCartQtyDownAction;
+import action689.DogCartQtyUpAction;
+import action689.DogCartRemoveAction;
 import action689.DogCartSearchAction;
 import action689.DogListAction;
 import action689.DogViewAction;
@@ -84,6 +87,27 @@ public class DogFrontController extends HttpServlet {
 			}
 		} else if(command.equals("/dogCartSearch.dog")) {
 			action = new DogCartSearchAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogCartRemove.dog")) {
+			action = new DogCartRemoveAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogCartQtyUp.dog")) {
+			action = new DogCartQtyUpAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogCartQtyDown.dog")) {
+			action = new DogCartQtyDownAction();
 			try {
 				forward = action.excute(request, response);
 			} catch(Exception e) {
