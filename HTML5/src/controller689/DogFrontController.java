@@ -17,6 +17,8 @@ import action689.DogCartQtyUpAction;
 import action689.DogCartRemoveAction;
 import action689.DogCartSearchAction;
 import action689.DogListAction;
+import action689.DogRegistAction;
+import action689.DogRegistFormAction;
 import action689.DogViewAction;
 import action689.cookieRemoveAction;
 import vo689.ActionForward;
@@ -108,6 +110,20 @@ public class DogFrontController extends HttpServlet {
 			}
 		} else if(command.equals("/dogCartQtyDown.dog")) {
 			action = new DogCartQtyDownAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogRegist.dog")) {
+			action = new DogRegistAction();
+			try {
+				forward = action.excute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/dogRegistForm.dog")) {
+			action = new DogRegistFormAction();
 			try {
 				forward = action.excute(request, response);
 			} catch(Exception e) {

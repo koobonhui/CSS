@@ -17,9 +17,9 @@ public class DogListAction implements Action689 {
 		ArrayList<String> todayImageList = new ArrayList<>();
 		Cookie[] cookieArray = request.getCookies();
 		
-		if(cookieArray != null){
+		if(cookieArray != null) {
 			for (int i = 0; i < cookieArray.length; i++) {
-				if(cookieArray[i].getName().startsWith("today")){
+				if(cookieArray[i].getName().startsWith("today")) {
 					todayImageList.add(cookieArray[i].getValue());
 				}
 			}

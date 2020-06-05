@@ -9,7 +9,6 @@
 <style>
 #listForm {
 	width:700px;
-	height:500px;
 	border:1px solid red;
 	margin:auto;
 }

@@ -35,7 +35,7 @@ public class DogDAO {
 
 	public ArrayList<Dog> selectDogList() {
 		PreparedStatement pstmt = null;
-		ResultSet rs= null;
+		ResultSet rs = null;
 		ArrayList<Dog> dogList = null;
 		
 		try {
@@ -83,7 +83,7 @@ public class DogDAO {
 			
 			if(rs.next()){
 				dog = new Dog(
-						rs.getInt("id")
+						 rs.getInt("id")
 						,rs.getString("kind")
 						,rs.getInt("price")
 						,rs.getString("image")
@@ -100,7 +100,7 @@ public class DogDAO {
 			close(rs);
 			close(pstmt);
 		}
-		
+
 		return dog;
 	}
 
@@ -119,6 +119,29 @@ public class DogDAO {
 		}
 		
 		return updateCount;
+	}
+
+	public int insertDog(Dog dog) {
+		PreparedStatement pstmt = null;
+		int insertCount = 0;
+		
+		try {
+			pstmt = conn.prepareStatement("INSERT INTO dog VALUES(dog_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?)");
+			pstmt.setString(1, dog.getKind());
+			pstmt.setInt(2, dog.getPrice());
+			pstmt.setString(3, dog.getImage());
+			pstmt.setString(4, dog.getCountry());
+			pstmt.setInt(5, dog.getHeight());
+			pstmt.setInt(6, dog.getWeight());
+			pstmt.setString(7, dog.getContent());
+			pstmt.setInt(8, dog.getReadcount());
+			insertCount = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return insertCount;
 	}
 
 }

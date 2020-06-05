@@ -43,11 +43,11 @@ table {
       <h2>개정보등록</h2>
    </header>
    
-   <form action="dogRegist.dog" method="post" name = "writeForm" enctype="multipart/form-data">     
+   <form action = "dogRegist.dog" method = "post" name = "writeForm" enctype = "multipart/form-data">     
 	   <table>
 		   <tr>
-		      <td colspan="2">
-		         <a href="dogList.dog">목록보기</a>
+		      <td colspan = "2">
+		         <a href = "dogList.dog">목록보기</a>
 		      </td>
 		   </tr>
 		   
@@ -57,7 +57,7 @@ table {
 		      </td>
 		      
 		      <td class = "td_right">
-		         <input type = "text" name = "kind" id ="kind" required="required"/>
+		         <input type = "text" name = "kind" id = "kind" required = "required"/>
 		      </td>
 		   </tr>
 		   
@@ -67,7 +67,7 @@ table {
 		      </td>
 		      
 		      <td class = "td_right">
-		         <input type = "text" name = "nation" id ="nation"/>
+		         <input type = "text" name = "nation" id = "nation"/>
 		      </td>
 		   </tr>
 		   
@@ -107,7 +107,7 @@ table {
 		      </td>
 		      
 		      <td class = "td_right">
-		         <textarea name="content" id="content" rows="13" cols="40" wrap = "off"></textarea>
+		         <textarea name = "content" id = "content" rows = "13" cols = "40" wrap = "soft"></textarea>
 		      </td>
 		   </tr>
 		   
@@ -122,7 +122,7 @@ table {
 		   </tr>
 		   
 		   <tr>
-		      <td colspan="2" id = "commandCell"> 
+		      <td colspan= "2" id = "commandCell"> 
 		         <input type = "submit" value = "개상품등록"/>      
 		         <input type = "reset" value = "다시작성"/>      
 		         <input type = "button" value = "개상품목록보기" onClick="window.location.href='dogList.dog'"/>      
