@@ -21,7 +21,7 @@ table {
 </head>
 <body>
 <section id = "joinformArea">
-	<form name="joinform" action="./memberJoinAction.me" method="post">
+	<form name="joinform" action="memberJoinAction.dom" method="post">
 		<table>
 			<tr>
 				<td colspan="2">

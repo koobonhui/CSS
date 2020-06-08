@@ -21,7 +21,7 @@ table {
 </head>
 <body>
 <section id = "loginFormArea">
-	<form name = "loginForm" action = "memberLoginAction.do" method = "post">
+	<form name = "loginForm" action = "memberLoginAction.dom" method = "post">
 		<table>
 			<tr>
 				<td colspan="2">
@@ -42,7 +42,7 @@ table {
 			<tr>
 				<td colspan="2">
 					<a href="javascript:loginForm.submit()">로그인</a>&nbsp;&nbsp;
-					<a href="memberJoin.do">회원가입</a>
+					<a href="memberJoin.dom">회원가입</a>
 				</td>
 			</tr>
 		</table>

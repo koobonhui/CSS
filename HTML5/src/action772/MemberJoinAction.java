@@ -37,7 +37,7 @@ public class MemberJoinAction implements Action {
 	   	} else {
 	   	    forward = new ActionForward();
 	   		forward.setRedirect(true);
-	   		forward.setPath("/memberLogin.do");
+	   		forward.setPath("/memberLogin.dom");
    		}
    		return forward;
 }

@@ -12,7 +12,7 @@ import action772.MemberJoinAction;
 import action772.MemberLoginAction;
 import vo772.ActionForward;
 
-@WebServlet("*.do")
+@WebServlet("*.dom")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,20 +32,20 @@ public class MemberFrontController extends HttpServlet {
 		ActionForward forward = null;
 		Action action = null;
 		
-		if(command.equals("/memberLogin.do")) {
+		if(command.equals("/memberLogin.dom")) {
 			forward = new ActionForward();
 			forward.setPath("/loginForm772.jsp");
-		} else if(command.equals("/memberJoin.do")) {
+		} else if(command.equals("/memberJoin.dom")) {
 			forward = new ActionForward();
 			forward.setPath("/joinForm772.jsp");
-		} else if(command.equals("/memberLoginAction.do")) {
+		} else if(command.equals("/memberLoginAction.dom")) {
 			action = new MemberLoginAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/memberJoinAction.do")) {
+		} else if(command.equals("/memberJoinAction.dom")) {
 			action = new MemberJoinAction();
 			try {
 				forward = action.execute(request, response);

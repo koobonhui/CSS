@@ -27,13 +27,13 @@ public class MemberLoginAction implements Action {
    	    forward = new ActionForward();
    		session.setAttribute("id", member.getMember_id());
    		forward.setRedirect(true);
-   		forward.setPath("memberListAction.do");
+   		forward.setPath("memberListAction.dom");
    		} else {
    			response.setContentType("text/html;charset=UTF-8");
 	   		PrintWriter out=response.getWriter();
 	   		out.println("<script>");
 	   		out.println("alert('로그인 실패');");
-	   		out.println("location.href='memberLogin.do';");
+	   		out.println("location.href='memberLogin.dom';");
 	   		out.println("</script>");
    		}
    		return forward;
