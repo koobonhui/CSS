@@ -14,7 +14,7 @@ public class MemberJoinAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		MemberBean member = new MemberBean();
-   		boolean joinResult=false;
+   		boolean joinResult = false;
    		
    		member.setMember_id(request.getParameter("member_id"));
    		member.setMember_pw(request.getParameter("member_pw"));
@@ -27,7 +27,7 @@ public class MemberJoinAction implements Action {
    		joinResult = memberJoinService.joinMember(member);
    		
    		ActionForward forward = null;
-   		if(joinResult==false) {
+   		if(joinResult == false) {
    			response.setContentType("text/html;charset=UTF-8");
    			PrintWriter out = response.getWriter();
    			out.println("<script>");
@@ -37,7 +37,7 @@ public class MemberJoinAction implements Action {
 	   	} else {
 	   	    forward = new ActionForward();
 	   		forward.setRedirect(true);
-	   		forward.setPath("/memberLogin.dom");
+	   		forward.setPath("memberLogin.dom");
    		}
    		return forward;
 }

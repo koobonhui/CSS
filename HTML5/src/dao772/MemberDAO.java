@@ -5,9 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-import javax.sql.DataSource;
-
 import vo772.MemberBean;
 
 public class MemberDAO {
@@ -34,10 +31,10 @@ public class MemberDAO {
 	
 	public String selectLoginId(MemberBean member) {
 		String loginId = null;
-		String sql="SELECT MEMBER_ID FROM members WHERE MEMBER_ID=? AND MEMBER_PW=?";
+		String sql = "SELECT member_id FROM members WHERE member_id=? AND member_pw=?";
 		
 		try {
-			pstmt=conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMember_id());
 			pstmt.setString(2, member.getMember_pw());
 			rs = pstmt.executeQuery();
@@ -56,97 +53,96 @@ public class MemberDAO {
 	}
 	
 	public int insertMember(MemberBean member) {
-		String sql="INSERT INTO members VALUES (?, ?, ?, ?, ?, ?)";
-		int insertCount=0;
+		String sql = "INSERT INTO members VALUES (?, ?, ?, ?, ?, ?)";
+		int insertCount = 0;
 		
-		try{
-
-			pstmt=conn.prepareStatement(sql);
+		try {
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMember_id());
 			pstmt.setString(2, member.getMember_pw());
 			pstmt.setString(3, member.getMember_name());
 			pstmt.setInt(4, member.getMember_age());
 			pstmt.setString(5, member.getMember_gender());
 			pstmt.setString(6, member.getMember_email());
-			insertCount = pstmt.executeUpdate();
-			
-		}catch(Exception ex){
+			insertCount = pstmt.executeUpdate();			
+		} catch(Exception ex) {
 			System.out.println("joinMember 에러: " + ex);			
-		}finally{
+		} finally {
 			close(pstmt);
 		}
 		
 		return insertCount;
 	}
 	
-	public ArrayList<MemberBean> selectMemberList(){
-		String sql="SELECT * FROM members";
+	public ArrayList<MemberBean> selectMemberList() {
+		String sql = "SELECT * FROM members";
 		ArrayList<MemberBean> memberList = new ArrayList<MemberBean>();
 		MemberBean mb = null;
-		try{
+		try {
 			
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()){
-				do{
-				mb=new MemberBean();
-				mb.setMember_id(rs.getString("MEMBER_ID"));
-				mb.setMember_pw(rs.getString("MEMBER_PW"));
-				mb.setMember_name(rs.getString("MEMBER_NAME"));
-				mb.setMember_age(rs.getInt("MEMBER_AGE"));
-				mb.setMember_gender(rs.getString("MEMBER_GENDER"));
-				mb.setMember_email(rs.getString("MEMBER_EMAIL"));
-				memberList.add(mb);
-				}while(rs.next());
+			if(rs.next()) {
+				do {
+					mb = new MemberBean();
+					mb.setMember_id(rs.getString("member_id"));
+					mb.setMember_pw(rs.getString("member_pw"));
+					mb.setMember_name(rs.getString("member_name"));
+					mb.setMember_age(rs.getInt("member_age"));
+					mb.setMember_gender(rs.getString("member_gender"));
+					mb.setMember_email(rs.getString("member_email"));
+					memberList.add(mb);
+				} while(rs.next());
 			}
-		}catch(Exception ex){
+		} catch(Exception ex) {
 			System.out.println("getDeatilMember 에러: " + ex);			
-		}finally{
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		return memberList;
 	}
 	
-	public MemberBean selectMember(String id){
-		String sql="SELECT * FROM members WHERE MEMBER_ID=?";
+	public MemberBean selectMember(String viewId) {
+		String sql = "SELECT * FROM members WHERE member_id=?";
 		MemberBean mb = null;
-		try{
+		try {
 			
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs=pstmt.executeQuery();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, viewId);
+			rs = pstmt.executeQuery();
 			
-			if(rs.next()){
-			mb=new MemberBean();
-			mb.setMember_id(rs.getString("MEMBER_ID"));
-			mb.setMember_pw(rs.getString("MEMBER_PW"));
-			mb.setMember_name(rs.getString("MEMBER_NAME"));
-			mb.setMember_age(rs.getInt("MEMBER_AGE"));
-			mb.setMember_gender(rs.getString("MEMBER_GENDER"));
-			mb.setMember_email(rs.getString("MEMBER_EMAIL"));
+			if(rs.next()) {
+				mb = new MemberBean();
+				mb.setMember_id(rs.getString("member_id"));
+				mb.setMember_pw(rs.getString("member_pw"));
+				mb.setMember_name(rs.getString("member_name"));
+				mb.setMember_age(rs.getInt("member_age"));
+				mb.setMember_gender(rs.getString("member_gender"));
+				mb.setMember_email(rs.getString("member_email"));
 			}
-		}catch(Exception ex){
+		} catch(Exception ex) {
 			System.out.println("getDeatilMember 에러: " + ex);			
-		}finally{
+		} finally {
 			close(rs);
 			close(pstmt);
 		}
 		
 		return mb;
 	}
-	public int deleteMember(String id){
-		String sql="DELETE MEMBER1 WHERE MEMBER_ID=?";
+	
+	public int deleteMember(String deleteId) {
+		String sql = "DELETE FROM members WHERE member_id=?";
 		int deleteCount = 0;
 
-		try{
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, deleteId);
 			deleteCount = pstmt.executeUpdate();
-		}catch(Exception ex){
+		} catch(Exception ex) {
 			System.out.println("deleteMember 에러: " + ex);	
-		}finally{
+		} finally {
 			close(pstmt);
 		}
 		
